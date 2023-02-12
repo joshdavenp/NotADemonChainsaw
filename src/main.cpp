@@ -58,6 +58,14 @@ void allForward(int dist){
   backLeftDrive.rotateFor(forward, dist, degrees);
 }
 
+void allForwardc(int dist){
+  frontLeftDrive.startRotateFor(forward, dist, degrees);
+  frontRightDrive.startRotateFor(reverse, dist, degrees);
+  backRightDrive.startRotateFor(reverse, dist, degrees);
+  backLeftDrive.startRotateFor(forward, dist, degrees);
+}
+
+
 void allStart(){
   frontLeftDrive.spin(forward);
   frontRightDrive.spin(reverse);
@@ -151,6 +159,7 @@ void longSide (){
 }
 
 void skills (){
+  allForwardc(100);
   setMotors(100);
   turnRoller(100);
   allForward(-100);
@@ -162,6 +171,9 @@ void skills (){
   setMotors(25);
   allForward(50);
   turnRoller(-120);
+  setMotors(100);
+  allForward(-600);
+  tankTurn(-500);
 }
 
 void driveForward(int duration){
@@ -323,7 +335,7 @@ void crazyIdea (int xvalue, int yvalue){
 }
 
 void expand (){
-  if(controller1.ButtonLeft.pressing() && Brain.Timer.value() > 90){
+  if(controller1.ButtonLeft.pressing()){
     expandMotor.spin(reverse, 100, pct); 
   }
   else{
