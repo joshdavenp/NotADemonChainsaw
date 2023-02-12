@@ -18,7 +18,7 @@ vex::brain       Brain;
 
 int main() {
 
-    Brain.Screen.printAt( 10, 50, "Hello chainsaw" );
+    Brain.Screen.printAt( 10, 50, "Hello not a chainsaw" );
    
     while(1) {
         
