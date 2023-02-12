@@ -105,6 +105,10 @@ void autoMechan(int z){
   backRightDrive.startRotateFor(forward,z,deg);
 }
 
+void expandSkill (){
+  expandMotor.spin(reverse);
+}
+
 
 void allStop(){
   frontLeftDrive.stop(hold);
@@ -174,6 +178,7 @@ void skills (){
   setMotors(100);
   allForward(-600);
   tankTurn(-500);
+  expandSkill();
 }
 
 void driveForward(int duration){
@@ -590,9 +595,28 @@ void whatColor(){
   }
 }
 
+void startMatch (){
+  allForwardc(100);
+  setMotors(100);
+  turnRoller(100);
+  allForward(-100);
+  mechaniumRight(600);
+  backLeftPivot(520);
+  tankTurn(625);
+  mechaniumRight(600);
+  allForward(500);
+  setMotors(25);
+  allForward(50);
+  turnRoller(-120);
+  setMotors(100);
+  allForward(-600);
+  tankTurn(-500);
+}
+
 void usercontrol(void) {
   // User control code here, inside the loop
   Brain.Timer.reset();
+  startMatch();
   while (1) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
