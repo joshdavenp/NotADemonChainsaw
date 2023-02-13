@@ -177,7 +177,7 @@ void skills (){
   turnRoller(-120);
   setMotors(100);
   allForward(-600);
-  tankTurn(-500);
+  tankTurn(-450);
   expandSkill();
 }
 
@@ -610,13 +610,13 @@ void startMatch (){
   turnRoller(-120);
   setMotors(100);
   allForward(-600);
-  tankTurn(-500);
+  tankTurn(-450);
 }
 
 void usercontrol(void) {
   // User control code here, inside the loop
   Brain.Timer.reset();
-  startMatch();
+  //startMatch();
   while (1) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
