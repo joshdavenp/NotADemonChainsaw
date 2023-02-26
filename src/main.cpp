@@ -48,21 +48,21 @@ void setMotors(int prct){
 }
 
 void turnRoller(int amount){
-  rollerMotor.spinFor(reverse, amount, degrees);
+  rollerMotor.spinFor(reverse, amount, degrees, false);
 }
 
 void allForward(int dist){
-  frontLeftDrive.startRotateFor(forward, dist, degrees);
-  frontRightDrive.startRotateFor(reverse, dist, degrees);
-  backRightDrive.startRotateFor(reverse, dist, degrees);
-  backLeftDrive.rotateFor(forward, dist, degrees);
+  frontLeftDrive.spinFor(forward, dist, degrees, false);
+  frontRightDrive.spinFor(reverse, dist, degrees, false);
+  backRightDrive.spinFor(reverse, dist, degrees, false);
+  backLeftDrive.spinFor(forward, dist, degrees);
 }
 
 void allForwardc(int dist){
-  frontLeftDrive.startRotateFor(forward, dist, degrees);
-  frontRightDrive.startRotateFor(reverse, dist, degrees);
-  backRightDrive.startRotateFor(reverse, dist, degrees);
-  backLeftDrive.startRotateFor(forward, dist, degrees);
+  frontLeftDrive.spinFor(forward, dist, degrees, false);
+  frontRightDrive.spinFor(reverse, dist, degrees, false);
+  backRightDrive.spinFor(reverse, dist, degrees, false);
+  backLeftDrive.spinFor(forward, dist, degrees, false);
 }
 
 
@@ -81,17 +81,17 @@ void allBrake(){
 }
 
 void backLeftPivot(float dist){
-  frontLeftDrive.startRotateFor(reverse, dist, degrees);
-  frontRightDrive.startRotateFor(forward, dist, degrees);
-  backRightDrive.startRotateFor(forward, dist, degrees);
-  backLeftDrive.rotateFor(forward, dist, degrees);
+  frontLeftDrive.spinFor(reverse, dist, degrees, false);
+  frontRightDrive.spinFor(forward, dist, degrees, false);
+  backRightDrive.spinFor(forward, dist, degrees, false);
+  backLeftDrive.spinFor(forward, dist, degrees);
 }
 
 void tankTurn(int dist){
-  frontLeftDrive.startRotateFor(forward, dist, degrees);
-  frontRightDrive.startRotateFor(forward, dist, degrees);
-  backRightDrive.startRotateFor(forward, dist, degrees);
-  backLeftDrive.rotateFor(forward, dist, degrees);
+  frontLeftDrive.spinFor(forward, dist, degrees, false);
+  frontRightDrive.spinFor(forward, dist, degrees, false);
+  backRightDrive.spinFor(forward, dist, degrees, false);
+  backLeftDrive.spinFor(forward, dist, degrees);
 }
 
 void autoMechan(int z){
@@ -99,10 +99,10 @@ void autoMechan(int z){
   backLeftDrive.setVelocity(200, pct);
   frontRightDrive.setVelocity(100, pct);
   backRightDrive.setVelocity(200, pct);
-  frontLeftDrive.startRotateFor(reverse,z,deg);
-  frontRightDrive.startRotateFor(reverse,z,deg);
-  backLeftDrive.startRotateFor(forward,z,deg);
-  backRightDrive.startRotateFor(forward,z,deg);
+  frontLeftDrive.spinFor(reverse,z,deg, false);
+  frontRightDrive.spinFor(reverse,z,deg, false);
+  backLeftDrive.spinFor(forward,z,deg, false);
+  backRightDrive.spinFor(forward,z,deg, false);
 }
 
 void expandSkill (){
@@ -123,21 +123,21 @@ void startLauncher(){
 }
 
 void turnAndIntake(long z){
-  conveyorMotor.startRotateFor(forward,z,deg);
+  conveyorMotor.spinFor(forward,z,deg, false);
 }
 
 void mechaniumRight(int howFar){
-  frontLeftDrive.startRotateFor(forward,howFar,deg);
-  frontRightDrive.startRotateFor(forward,howFar,deg);
-  backLeftDrive.startRotateFor(reverse,howFar,deg);
-  backRightDrive.rotateFor(reverse,howFar,deg);
+  frontLeftDrive.spinFor(forward,howFar,deg, false);
+  frontRightDrive.spinFor(forward,howFar,deg, false);
+  backLeftDrive.spinFor(reverse,howFar,deg, false);
+  backRightDrive.spinFor(reverse,howFar,deg);
 }
 
 void mechaniumLeft(int howFar){
-  frontLeftDrive.startRotateFor(reverse,howFar,deg);
-  frontRightDrive.startRotateFor(reverse,howFar,deg);
-  backLeftDrive.startRotateFor(forward,howFar,deg);
-  backRightDrive.startRotateFor(forward,howFar,deg);
+  frontLeftDrive.spinFor(reverse,howFar,deg, false);
+  frontRightDrive.spinFor(reverse,howFar,deg, false);
+  backLeftDrive.spinFor(forward,howFar,deg, false);
+  backRightDrive.spinFor(forward,howFar,deg, false);
 }
 // the turn and intake are not spining enough
 void shortSide (){
